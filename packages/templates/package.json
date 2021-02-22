@@ -1,0 +1,22 @@
+{
+  "name": "@minit/templates",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsnd --respawn -r tsconfig-paths/register sample/index.ts",
+    "prebuild": "rimraf dist",
+    "build": "esbuild src/index.ts --outfile=dist/index.js --bundle --platform=node --minify",
+    "postbuild": "tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "@types/shelljs": "0.8.8",
+    "@types/uuid": "8.3.0",
+    "esbuild": "0.8.49",
+    "ts-node-dev": "1.1.1",
+    "tsconfig-paths": "3.9.0"
+  },
+  "dependencies": {
+    "nunix": "0.1.0-alpha.3"
+  }
+}
